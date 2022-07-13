@@ -26,7 +26,7 @@ jobs:
       - name: Apply latest tag to file
         run: |
           export VERSION=${{ steps.previoustag.outputs.tag }}
-          if ! [ -d "${VERSION} ] ; then 
+          if ! [ -d "${VERSION}" ] ; then 
             mkdir ${VERSION}
           else
             echo "Directory ${VERSION} already exists"
