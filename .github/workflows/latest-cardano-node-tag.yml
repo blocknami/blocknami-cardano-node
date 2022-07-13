@@ -21,7 +21,7 @@ jobs:
       - name: Checkout the local repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.REPO_SCOPED_TOKEN }}
+          token: ${{ github.token }}
 
       - name: Apply latest tag to file
         run: |
