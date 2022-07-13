@@ -27,7 +27,7 @@ jobs:
         run: |
           export VERSION=${{ steps.previoustag.outputs.tag }}
           if ! [ -d "${VERSION}" ] ; then 
-            mkdir ${VERSION}
+            mkdir -pv ${VERSION}
           else
             echo "Directory ${VERSION} already exists"
           fi
