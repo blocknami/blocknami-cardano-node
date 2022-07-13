@@ -28,7 +28,9 @@ jobs:
           export VERSION=${{ steps.previoustag.outputs.tag }}
           if ! [ -d "${VERSION}" ] ; then 
             mkdir -pv ${VERSION}
-            git add ./${VERSION}
+            touch ./${VERSION}/tag
+            echo "${VERSION}" > ./${VERSION}/tag
+            git add ./${VERSION}/tag
           else
             echo "Directory ${VERSION} already exists"
           fi
